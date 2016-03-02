@@ -1,3 +1,9 @@
-<h2 id="title">Welcome to Ember</h2>
 
+{{#link-to 'index'}}welcome{{/link-to}}
+{{#link-to 'new'}}add{{/link-to}}
 {{outlet}}
+
+{{#each model as |book|}}
+title{{#link-to 'books' book.id}}{{book.title}}{{/link-to}}
+<a href="" {{action 'delete' book}}>delete</a>
+{{/each}}
